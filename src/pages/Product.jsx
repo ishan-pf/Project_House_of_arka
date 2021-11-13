@@ -4,7 +4,7 @@ import Announcements from "../components/Announcements"
 import Products from "../components/Products"
 import Newsletter from "../components/Newsletter"
 import Footer from "../components/Footer"
-
+import { Add, Remove } from "@material-ui/icons";
 
 
 const Container=styled.div``
@@ -56,6 +56,48 @@ display: flex;
 align-items: center;
 `
 
+const AddContainer=styled.div`
+display: flex;
+align-items: center;
+width: 50%;
+justify-content: space-between ;
+`
+
+
+const AmountContainer=styled.div`
+display: flex;
+align-items: center;
+font-weight: 700;
+
+`
+
+
+const Amount=styled.span`
+width: 30px;
+height: 30px;
+border-radius: 10px;
+border: 1px solid teal;
+display: flex;
+align-items: center;
+justify-content:center;
+margin: 0px 5px;
+`
+
+
+
+const Button=styled.button`
+padding: 15px;
+border:2px solid teal;
+background-color: #fff;
+cursor: pointer;
+font-weight: 500;
+
+&:hover{
+    background-color: grey;
+}
+`
+
+
 const Product = () => {
     return (
         <Container>
@@ -70,12 +112,22 @@ const Product = () => {
                         <Title>Oxidised small studs</Title>
                         <Desc>sijgkdvmdfjmv</Desc>
                         <Price>rs 200</Price>
-                    </InfoContainer>
+                  
                     <FilterContainer>
                         <Filter>
                             <FilterTitle>Type</FilterTitle>
                         </Filter>
                     </FilterContainer>
+                    <AddContainer>
+                        <AmountContainer>
+                            <Remove/>
+                            <Amount>1</Amount>
+                                <Add/>
+                                
+                        </AmountContainer>
+                        <Button>ADD tO CART</Button>
+                    </AddContainer>
+                    </InfoContainer>
                 </Wrapper>
 <Products/>
            <Newsletter/>
