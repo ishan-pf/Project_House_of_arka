@@ -30,6 +30,7 @@ justify-content: center;
 display: flex;
 background-color:#f5fbfd;
 position: relative;
+background-color : #F1E4D3;;
 
 &:hover ${Info}{
 opacity: 1;
@@ -40,7 +41,9 @@ width: 200px;
 height: 200px;
 border-radius:50%;
 background-color:white;
-position:absolute;`
+position:absolute;
+background-color : #F1E4D3;;
+`
 
 const Image=styled.img`
 height: 75%;

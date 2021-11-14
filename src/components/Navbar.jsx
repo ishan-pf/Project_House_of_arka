@@ -25,7 +25,7 @@ const Container = styled.div`
      const Language=styled.span`
      font-size: 14px;
      cursor: pointer;
-
+     color: gray;
      `
 
      const SearchContainer = styled.div`
@@ -33,15 +33,23 @@ const Container = styled.div`
      display: flex;
      align-items: center;
      margin-left:25px;
-     padding:5px;`
+     padding:5px;
+     border:none;
+     border-bottom:1px solid lightgray;
+     `
 
 
      const Input = styled.input`
      border:none;
-
+     background-color : #F1E4D3;;
+     Outline:none;
      `
      const Logo = styled.h1`
-     font-weight: bold;
+     font-weight: 700;
+     font-family: 'Port Lligat Sans', sans-serif;
+     color:#792823;
+     font-size:35px;
+     cursor: pointer;
 
      `
  const Center = styled.div`
@@ -59,7 +67,10 @@ const Container = styled.div`
 
      const MenuItem = styled.div`
      font-size:14px;
-     cursor: pointer;`
+     cursor: pointer;
+     color: gray;
+     margin:0 15px;
+     `
 
 
 const Navbar = () => {
@@ -70,7 +81,7 @@ const Navbar = () => {
                     <Language>ENGLISH</Language>
                     <SearchContainer>
                         <Input/>
-                        <Search style={{color:"gray",fontSize:16}}/>
+                        <Search style={{color:"gray",fontSize:18}}/>
                         
                     </SearchContainer>
                 </Left>

@@ -17,7 +17,10 @@ flex-direction: column;
 padding: 20px;
 
 `
-const Logo=styled.h1``
+const Logo=styled.h1` 
+color:#792823;
+font-family: 'Port Lligat Sans', sans-serif;
+`
 
 const Desc=styled.p`
 margin: 20px 0px;
@@ -55,11 +58,12 @@ padding: 0;
 list-style: none;
 display: flex;
 flex-wrap:wrap ;
-width: 30%;
+
 `
 
 const ListItem=styled.li`
 
+width:50%;
 margin-bottom: 10px;
 list-style: none;
 
@@ -114,17 +118,9 @@ const Footer = () => {
   Useful links  
 </Title>
 <List>
-
-</List>
 <ListItem>Home</ListItem>
 
-<ListItem>Cart</ListItem>
-
-<ListItem>Earrings</ListItem>
-
-<ListItem>Rings</ListItem>
-
-<ListItem>Necklaces</ListItem>
+<ListItem>Products</ListItem>
 
 <ListItem>My Account</ListItem>
 
@@ -132,7 +128,9 @@ const Footer = () => {
 
 <ListItem>Wishlist</ListItem>
 
-<ListItem>Terms and conditions</ListItem>
+<ListItem>Terms & conditions</ListItem>
+</List>
+
 
 
 </Center>
@@ -142,13 +140,13 @@ const Footer = () => {
        CONTACT 
     </Title>
     <ContactItem><Room style={{marginRight:"10px"}}/>
-        xyz 4985. hhhh ttttt 9585
+        Jaipur, India
     </ContactItem>
     <ContactItem><Phone  style={{marginRight:"10px"}}/>
        56545486451
     </ContactItem>
     <ContactItem><EmailOutlined  style={{marginRight:"10px"}}/>
-        contact@houseofarka.com
+        houseofarka488@gmail.com
     </ContactItem>
 
     <Payment src=""/>

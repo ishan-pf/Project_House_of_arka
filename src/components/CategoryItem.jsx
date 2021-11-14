@@ -39,6 +39,7 @@ padding: 10px;
 background-color: white;
 color: gray;
 cursor: pointer;
+border-radius:3px;
 font-weight: 600;
 `;
 

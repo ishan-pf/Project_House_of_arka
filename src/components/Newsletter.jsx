@@ -37,6 +37,9 @@ flex:1;
 border:none;
 background-color:teal;
 color: white;
+border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+padding:3px;
 `
 
 
@@ -48,7 +51,7 @@ const Newsletter = () => {
                  <InputContainer>
                     <Input placeholder="Your email"/>
                     <Button>
-                        <Send/>
+                        <Send style={{marginTop :"5px"}} />
                     </Button>
                     </InputContainer>
                 
