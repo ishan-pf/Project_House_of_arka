@@ -8,6 +8,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 flex-direction: column;
+box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
 `
 
 const Title=styled.h1`
@@ -30,7 +31,9 @@ justify-content: space-between;`
 const Input=styled.input`
 border:none;
 flex:8;
-padding-left: 20px;`
+padding-left: 20px;
+Outline:none;
+`
 
 const Button=styled.button`
 flex:1;
@@ -40,6 +43,7 @@ color: white;
 border-top-right-radius: 5px;
 border-bottom-right-radius: 5px;
 padding:3px;
+cursor:pointer;
 `
 
 

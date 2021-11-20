@@ -19,13 +19,17 @@ const Container = styled.div`
 const Wrapper = styled.div`
   width: 40%;
   padding: 20px;
-  background-color: white;
+  border-radius:3px;
+  background-color : #F1E4D3;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
   ${mobile({ width: "75%" })}
 `;
 
 const Title = styled.h1`
   font-size: 24px;
   font-weight: 300;
+  color:#792823;
+  text-align: center;
 `;
 
 const Form = styled.form`
@@ -38,6 +42,11 @@ const Input = styled.input`
   min-width: 40%;
   margin: 20px 10px 0px 0px;
   padding: 10px;
+  background-color : #F1E4D3;
+  border:none;
+  border:1px solid lightgray;
+  border-radius:2px;
+  outline:none;
 `;
 
 const Agreement = styled.span`
@@ -47,11 +56,13 @@ const Agreement = styled.span`
 
 const Button = styled.button`
   width: 40%;
+  margin:0 auto;
   border: none;
   padding: 15px 20px;
   background-color: teal;
   color: white;
   cursor: pointer;
+  border-radius:5px;
 `;
 
 const Register = () => {
@@ -60,17 +71,17 @@ const Register = () => {
       <Wrapper>
         <Title>CREATE AN ACCOUNT</Title>
         <Form>
-          <Input placeholder="name" />
-          <Input placeholder="last name" />
-          <Input placeholder="username" />
-          <Input placeholder="email" />
-          <Input placeholder="password" />
-          <Input placeholder="confirm password" />
-          <Agreement>
+          <Input type="text" placeholder="first name" required />
+          <Input type="text" placeholder="last name"  />
+          <Input type="text" placeholder="username" min="4" required />
+          <Input type="email" placeholder="email" required />
+          <Input type="password" placeholder="password" required />
+          <Input type="password" placeholder="confirm password" required />
+          <Agreement type="checkbox" >
             By creating an account, I consent to the processing of my personal
             data in accordance with the <b>PRIVACY POLICY</b>
           </Agreement>
-          <Button>CREATE</Button>
+          <Button>Register</Button>
         </Form>
       </Wrapper>
     </Container>

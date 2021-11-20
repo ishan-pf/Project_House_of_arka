@@ -7,7 +7,10 @@ import Footer from "../components/Footer"
 import { Add, Remove } from "@material-ui/icons";
 
 
-const Container=styled.div``
+const Container=styled.div`
+    
+    background-color : #F1E4D3;;
+`
 
 const Wrapper=styled.div`
 padding: 50px;
@@ -101,8 +104,9 @@ font-weight: 500;
 const Product = () => {
     return (
         <Container>
+         <Announcements/>
             <Navbar/>
-            <Announcements/>
+           
             
                 <Wrapper>
                     <ImgContainer>

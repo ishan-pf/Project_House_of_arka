@@ -6,7 +6,9 @@ import Newsletter from "../components/Newsletter"
 import Footer from "../components/Footer"
 
 
-const Container=styled.div``
+const Container=styled.div`
+  background-color : #F1E4D3;;
+`
 
 const Title=styled.h1`
 
@@ -20,6 +22,7 @@ justify-content: space-between;
 
 const Filter=styled.div`
 margin: 20px;
+
 `
 
 const FilterText=styled.span`
@@ -32,7 +35,9 @@ margin-right: 20px;
 const Select=styled.select`
 padding: 10px;
 margin-right: 20px;
-
+border:none;
+background-color:white;
+border-radius:2px;
 `
 
 const Option=styled.option`
@@ -43,18 +48,19 @@ const Option=styled.option`
 const ProductList = () => {
     return (
         <Container>
+        <Announcements/>
            <Navbar/>
-           <Announcements/>
+           
            
             <Title> EARRINGS</Title>
            <FilterContainer>
                
-               <Filter><FilterText>Filter Products:</FilterText>
+               <Filter><FilterText>Product Type:</FilterText>
                <Select>
                <Option disabled selected>
                    Type
                </Option>
-                   <Option>Gold Plated </Option>
+                   <Option >Gold Plated </Option>
                    <Option>Silver Plated</Option>
                    <Option>Oxidised </Option>
                    <Option>Kundan</Option>

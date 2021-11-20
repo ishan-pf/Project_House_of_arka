@@ -19,9 +19,10 @@ const HomePage = styled.div`
 const Home = () => {
     return (
         <HomePage>
-            <Announcements/>
+        <Announcements/>
         <Navbar/>
         <Slider/>
+        
         <Categories/>
         <Products/>
         <Newsletter/>
