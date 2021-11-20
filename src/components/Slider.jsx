@@ -1,6 +1,11 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons"
 import styled from "styled-components"
 import {useState}from "react"
+import HeroSlider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
+import { NextArrow, PrevArrow } from "./SliderArrows";
+
 
 const Container=styled.div`
 width:100%;
@@ -34,16 +39,20 @@ height:100%;
 display: flex;
 transition: all 1.5s ease;
 transform: translateX(${(props) => props.slideIndex * -100}vw);
+
+margin-top:40px;
 `
 
 const Slide=styled.div`
 display: flex;
 align-items: center;
 width:100vw;
-height:100vh;
-
+height:60vh;
+background: white;
 /* background-color:#${props=>props.bg}; */
 padding:50px 20px;
+margin-bottom:40px;
+box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 `;
 
 
@@ -58,6 +67,7 @@ padding:50px 0 50px 50px;
 
 const Image=styled.img`
 height:100%;
+box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
 `
 
 const InfoContainer =styled.div`
@@ -140,84 +150,77 @@ const silderImages = [
 
 
 const Slider = () => {
-    const [slideIndex, setSlideIndex]=useState(0);
-    const handleClick=(direction)=>{
-        if(direction === "left"){
-            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 5);
-        } else {
-            setSlideIndex(slideIndex < 5 ? slideIndex + 1 : 0);
-        }
+    // const [slideIndex, setSlideIndex]=useState(0);
+    // const handleClick=(direction)=>{
+    //     if(direction === "left"){
+    //         setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 5);
+    //     } else {
+    //         setSlideIndex(slideIndex < 5 ? slideIndex + 1 : 0);
+    //     }
 
-    };
+    // };
+
+    const settings = {
+        dots: true,
+        arrows: true,
+        infinite: true,
+        autoplay:true,
+        speed: 1800,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />
+      };
     return (
-        <Container>
-            <Arrow direction="left" onClick={()=> handleClick("left")}>
-             <ArrowLeftOutlined/>
-            </Arrow>
-            <Wrapper slideIndex={slideIndex}>
-            {silderImages.map((item) =>(
+//         <Container>
+//             <Arrow direction="left" onClick={()=> handleClick("left")}>
+//              <ArrowLeftOutlined/>
+//             </Arrow>
+//             <Wrapper slideIndex={slideIndex}>
+//             {silderImages.map((item) =>(
 
-                <Slide key={item.id}>
+//                 <Slide key={item.id}>
                 
+//                 <ImgContainer>
+//                 <Image src={item.src} alt={item.title} />
+//                 </ImgContainer>
+//                 <InfoContainer>
+//                     <Title>{item.title}</Title>
+//                     <Desc>{item.desc}</Desc>
+//                     <Button>{item.button}</Button>
+//                 </InfoContainer>
+
+// </Slide>
+
+//             ))}
+  
+//             </Wrapper>
+
+//             <Arrow direction="right" onClick={()=> handleClick("right")}>
+//              <ArrowRightOutlined/>
+//             </Arrow>
+
+//         </Container>
+            <HeroSlider {...settings}>
+          
+                {silderImages.map((item) =>(
+                    <Wrapper>
+                 <Slide key={item.id}>
                 <ImgContainer>
-                <Image src={item.src} alt={item.title} />
+                 <Image src={item.src} alt={item.title} />
                 </ImgContainer>
-                <InfoContainer>
-                    <Title>{item.title}</Title>
+                 <InfoContainer>
+                   <Title>{item.title}</Title>
                     <Desc>{item.desc}</Desc>
                     <Button>{item.button}</Button>
                 </InfoContainer>
-
-</Slide>
-
-            ))}
-           
-{/* <Slide>
                 
-                <ImgContainer>
-                <Imagetitle="https://images.unsplash.com/photo-1617038220319-276d3cfab638?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=987&q=80"/>
-                </ImgContainer>
-                <InfoContainer>
+ </Slide>
+                </Wrapper>
+             ))}
+                   
+            </HeroSlider>
 
-                    <Title>summer deals</Title>
-                    <Desc>dont compromise on style! get flat 20%off.</Desc>
-                    <Button>Shop Now</Button>
-                </InfoContainer>
-
-</Slide>
- <Slide bg="f5fafd">
-                
-                <ImgContainer>
-                <Imagetitle="https://images.unsplash.com/photo-1617038220319-276d3cfab638?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=987&q=80"/>
-                </ImgContainer>
-                <InfoContainer>
-
-                    <Title>summer deals</Title>
-                    <Desc>dont compromise on style! get flat 20%off.</Desc>
-                    <Button>Shop Now</Button>
-                </InfoContainer>
-
-</Slide>
-<Slide bg="fcf1ed">
-                
-                <ImgContainer>
-                <Imagetitle="https://images.unsplash.com/photo-1617038220319-276d3cfab638?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=987&q=80"/>
-                </ImgContainer>
-                <InfoContainer>
-
-                    <Title>summer deals</Title>
-                    <Desc>dont compromise on style! get flat 20%off.</Desc>
-                    <Button>Shop Now</Button>
-                </InfoContainer>
-
-</Slide> */}
-            </Wrapper>
-
-            <Arrow direction="right" onClick={()=> handleClick("right")}>
-             <ArrowRightOutlined/>
-            </Arrow>
-
-        </Container>
     )
 }
 

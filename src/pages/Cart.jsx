@@ -5,7 +5,9 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../Responsive";
 
-const Container = styled.div``;
+const Container = styled.div`
+background-color : #F1E4D3;;
+`;
 
 const Wrapper = styled.div`
   padding: 20px;
@@ -28,6 +30,7 @@ const TopButton = styled.button`
   padding: 10px;
   font-weight: 600;
   cursor: pointer;
+
   border: ${(props) => props.type === "filled" && "none"};
   background-color: ${(props) =>
     props.type === "filled" ? "black" : "transparent"};
@@ -155,8 +158,9 @@ const Button = styled.button`
 const Cart = () => {
   return (
     <Container>
+    <Announcement />
       <Navbar />
-      <Announcement />
+      
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
@@ -243,7 +247,7 @@ const Cart = () => {
           </Summary>
         </Bottom>
       </Wrapper>
-      <Footer />
+     <Footer />
     </Container>
   );
 };

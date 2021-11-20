@@ -8,16 +8,17 @@ position: relative;
 `
 
 const Image=styled.img`
-width: 100%;
-height:100%;
+width: 95%;
+height:80%;
 object-fit: cover;
-
+box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+/* filter:blur(1px) ; */
 `;
 
 const Info=styled.div`
 position:absolute;
-top: 0;
-left: 0;
+bottom: -35%;
+
 width: 100%;
 height: 100%;
 display: flex;
@@ -27,10 +28,11 @@ justify-content: center;
 
 `;
 
-const Title=styled.h1`
-color:white;
-margin-bottom: 20px;
+const Title=styled.h2`
 
+margin-bottom: 20px;
+color:#792823;
+font-family: 'Port Lligat Sans', sans-serif;
 `;
 
 const Button=styled.button`
@@ -50,7 +52,7 @@ const CategoryItem = ({item}) => {
             <Image src={item.img}/>
             <Info>
                 <Title>{item.title}</Title>
-                <Button>SHOP NOW</Button>
+                {/* <Button>SHOP NOW</Button> */}
             </Info>
         </Container>
     )

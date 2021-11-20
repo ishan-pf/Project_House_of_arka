@@ -23,7 +23,8 @@ font-family: 'Port Lligat Sans', sans-serif;
 `
 
 const Desc=styled.p`
-margin: 20px 0px;
+margin: 0 0 20px 0px;
+color:#792823;
 `
 
 const SocialContainer=styled.div`
@@ -93,7 +94,7 @@ const Footer = () => {
 <Left>
 
 <Logo>House Of ARKA</Logo>
-<Desc>A jewellery store</Desc>
+<Desc>A Jewellery Store</Desc>
 <SocialContainer>
 <SocialIcon color="3B5999">
     <Facebook/>
