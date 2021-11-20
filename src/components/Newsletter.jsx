@@ -50,7 +50,7 @@ cursor:pointer;
 const Newsletter = () => {
     return (
         <Container>
-            <Title>Newsletter</Title>
+            <Title>NewSletter</Title>
                 <Description>Get timely updates of your favourite products</Description>
                  <InputContainer>
                     <Input placeholder="Your email"/>
