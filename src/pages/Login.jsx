@@ -1,14 +1,16 @@
 import styled from "styled-components";
 import {mobile} from "../Responsive";
-
+import {useState} from 'react'
+import {useDispatch} from 'react-redux'
+import { login } from "../Redux/apiCalls";
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
   background: linear-gradient(
-      rgba(255, 255, 255, 0.3),
-      rgba(255, 255, 255, 0.3)
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0)
     ),
-    url("https://images.pexels.com/photos/6984650/pexels-photo-6984650.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+    url("https://images.unsplash.com/photo-1554047310-ab6170fc7b10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTJ8fGpld2Vscnl8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60")
       center;
   background-size: cover;
   display: flex;
@@ -70,17 +72,28 @@ const Link = styled.a`
   color:#792823;
 `;
 
-const Login = () => {
+const  Login = () => {
+
+  const [username , setUsername] = useState('');
+  const [password , setPassword] = useState('');
+  const dispatch = useDispatch()
+  const LoginHandler = (event) => {
+
+    event.preventDefault()
+
+    login(dispatch , {username , password})
+  }
+
   return (
     <Container>
       <Wrapper>
         <Title>SIGN IN</Title>
         <Form>
-          <Input type="email" placeholder="email" />
-          <Input type="password" placeholder="password" />
-          <Button>LOGIN</Button>
+          <Input type="email" placeholder="email" onChange = { (e) => setUsername(e.target.value)} />
+          <Input type="password" placeholder="password" onChange = { (e) => setPassword(e.target.value)} />
+          <Button onClick={LoginHandler}>LOGIN</Button>
           <Link>FORGET PASSWORD?</Link>
-          <Link>CREATE A NEW ACCOUNT</Link>
+          <Link to="/register">CREATE A NEW ACCOUNT</Link>
         </Form>
       </Wrapper>
     </Container>

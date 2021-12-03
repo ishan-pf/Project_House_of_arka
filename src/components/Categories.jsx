@@ -14,6 +14,7 @@ margin-top:60px;
 justify-content:space-between;
 align-items:center;
 box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
 `
 const Title = styled.h2`
 
@@ -63,6 +64,7 @@ const Categories = () => {
         autoplay:false,
         speed: 1000,
         slidesToShow: 3,
+        centerMode: true,
         slidesToScroll: 1,
         nextArrow: <NextArrowC />,
         prevArrow: <PrevArrowC />

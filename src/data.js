@@ -27,26 +27,31 @@ export const sliderItems = [
       id: 1,
       img: "https://i.pinimg.com/236x/9a/be/0c/9abe0c3c050cce8cc462df75c18ba5c4.jpg",
       title: "EARRINGS",
+      cat: "earrings"
     },
     {
       id: 2,
       img: "https://i.pinimg.com/236x/06/84/61/06846172e43a1834d2fbe43d24e894d9.jpg",
       title: "RINGS",
+      cat: "necklaces"
     },
     {
       id: 4,
       img: "https://media.istockphoto.com/photos/three-white-gold-diamond-rings-on-black-background-picture-id108222426?b=1&k=20&m=108222426&s=170667a&w=0&h=89tZSKK87B6vttnNVSNUIYEdpjUJxJikVIO7bJpHPjg=",
       title: "NECKLACES",
+      cat: "rings"
     },
     {
       id: 5,
       img: "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8amV3ZWxyeXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60",
       title: "NECKLACES",
+      cat:"bangels"
     },
     {
       id: 6,
       img: "https://media.istockphoto.com/photos/fancy-designer-antique-golden-bracelets-for-woman-fashion-picture-id1277517088?b=1&k=20&m=1277517088&s=170667a&w=0&h=PXTQvh19pESR7mIekh3mJQHWcw2FDRrYcHdxsv9XY-Q=",
       title: "NECKLACES",
+      cat: "necklaces"
     },
   ];
 

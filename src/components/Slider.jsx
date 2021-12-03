@@ -1,6 +1,6 @@
-import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons"
+// import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons"
 import styled from "styled-components"
-import {useState}from "react"
+// import {useState}from "react"
 import HeroSlider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";

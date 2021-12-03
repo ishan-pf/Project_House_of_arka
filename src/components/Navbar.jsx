@@ -1,7 +1,9 @@
 import { Badge } from '@material-ui/core';
 import { Search, ShoppingCartOutlined } from '@material-ui/icons';
 import React from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import {useSelector, useDispatch} from 'react-redux' 
 
 
 const Container = styled.div`
@@ -50,11 +52,13 @@ const Container = styled.div`
      color:#792823;
      font-size:35px;
      cursor: pointer;
-
+   
      `
  const Center = styled.div`
      flex:1;
-     text-align:center;`;
+     text-align:center;
+     
+     `;
 
 
      const Right = styled.div`
@@ -70,10 +74,18 @@ const Container = styled.div`
      cursor: pointer;
      color: gray;
      margin:0 15px;
+
+     &:hover{
+         color:teal;
+     }
      `
 
 
 const Navbar = () => {
+
+    const quantity = useSelector( state => state.cart.quantity)
+
+// console.log(quantity)
     return (
         <Container>
             <Wrapper>
@@ -89,12 +101,14 @@ const Navbar = () => {
                 <Right>
                     <MenuItem>REGISTER</MenuItem>
                     <MenuItem>SIGN IN</MenuItem>
+                    <Link to="/cart">
                     <MenuItem>
-                    <Badge badgeContent={4} color="primary">
+                    <Badge badgeContent={quantity} color="primary">
                         <ShoppingCartOutlined/>
                     
                     </Badge>
                     </MenuItem>
+                    </Link>
                     </Right>
             </Wrapper>
         </Container>

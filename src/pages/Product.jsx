@@ -1,3 +1,4 @@
+import {useState , useEffect} from 'react';
 import styled from "styled-components"
 import Navbar from "../components/Navbar"
 import Announcements from "../components/Announcements"
@@ -5,8 +6,11 @@ import Products from "../components/Products"
 import Newsletter from "../components/Newsletter"
 import Footer from "../components/Footer"
 import { Add, Remove } from "@material-ui/icons";
-
-
+import {useLocation} from "react-router-dom"
+// import axios from 'axios';
+import {publicReq} from '../axiosRequest'
+import {useDispatch} from 'react-redux'
+import {addProduct} from '../Redux/CartReducer'
 const Container=styled.div`
     
     background-color : #F1E4D3;;
@@ -102,6 +106,48 @@ font-weight: 500;
 
 
 const Product = () => {
+
+    const location = useLocation()
+    const id = location.pathname.split("/")[2];
+
+    const [product , setProduct] = useState([]);
+    
+    const [quantity, setQuantity] = useState(1);
+    const dispatch = useDispatch();
+
+    useEffect(() =>{
+
+        const get_product = async() =>{
+           try {
+            const res = await publicReq.get(`/products/find/${id}`);
+            setProduct(res.data)
+        }
+        catch(err){
+
+        }
+        }
+
+        get_product();
+
+    })
+
+    const handlequantity = (type) =>{
+
+        if(type === 'inc' ){
+
+            setQuantity(quantity + 1)
+        }
+        else{
+            quantity > 1 && setQuantity(quantity - 1)
+        }
+    }
+
+    const handleClick = () =>{
+
+        dispatch(addProduct({ ...product , quantity}))
+
+    }
+
     return (
         <Container>
          <Announcements/>
@@ -110,12 +156,12 @@ const Product = () => {
             
                 <Wrapper>
                     <ImgContainer>
-                    <Image src="https://images.unsplash.com/photo-1612529328850-598a0e3a3e31?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1887&q=80"/>
+                    <Image src={product.image} />
                     </ImgContainer>
                     <InfoContainer>
-                        <Title>Oxidised small studs</Title>
-                        <Desc>sijgkdvmdfjmv</Desc>
-                        <Price>rs 200</Price>
+                        <Title>{product.title}</Title>
+                        <Desc>{product.description}</Desc>
+                        <Price>₹ {product.price}</Price>
                   
                     <FilterContainer>
                         <Filter>
@@ -124,16 +170,16 @@ const Product = () => {
                     </FilterContainer>
                     <AddContainer>
                         <AmountContainer>
-                            <Remove/>
-                            <Amount>1</Amount>
-                                <Add/>
+                            <Remove onClick={() => handlequantity("desc")} />
+                            <Amount>{quantity}</Amount>
+                            <Add  onClick={() => handlequantity("inc")} />
                                 
                         </AmountContainer>
-                        <Button>ADD tO CART</Button>
+                        <Button onClick = {handleClick}>ADD TO CART</Button>
                     </AddContainer>
                     </InfoContainer>
                 </Wrapper>
-<Products/>
+            <Products/>
            <Newsletter/>
            <Footer/>
         </Container>
