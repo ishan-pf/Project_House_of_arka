@@ -6,11 +6,12 @@ import Login from "./pages/Login";
 import Cart from "./pages/Cart";
 import { BrowserRouter as Router, Routes ,Route, Navigate } from "react-router-dom";
 
-
+import {useSelector} from 'react-redux'
 
 const App=()=> {
    
-    const user = false;
+    const user = useSelector(state=> state.currentUser);
+    // const user = true;
     return(
       <Router>
         <Routes>

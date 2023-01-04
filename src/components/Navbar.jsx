@@ -54,10 +54,11 @@ const Container = styled.div`
      cursor: pointer;
    
      `
- const Center = styled.div`
+ const NavCenter = styled(Link)`
      flex:1;
      text-align:center;
-     
+     text-decoration : none;
+
      `;
 
 
@@ -97,7 +98,7 @@ const Navbar = () => {
                         
                     </SearchContainer>
                 </Left>
-                <Center><Logo>House Of ARKA</Logo></Center>
+                <NavCenter to="/"><Logo>House Of ARKA</Logo></NavCenter>
                 <Right>
                     <MenuItem>REGISTER</MenuItem>
                     <MenuItem>SIGN IN</MenuItem>

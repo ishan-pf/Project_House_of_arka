@@ -1,6 +1,7 @@
 // import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons"
 import styled from "styled-components"
 // import {useState}from "react"
+import { Link } from 'react-router-dom'
 import HeroSlider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
@@ -150,15 +151,7 @@ const silderImages = [
 
 
 const Slider = () => {
-    // const [slideIndex, setSlideIndex]=useState(0);
-    // const handleClick=(direction)=>{
-    //     if(direction === "left"){
-    //         setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 5);
-    //     } else {
-    //         setSlideIndex(slideIndex < 5 ? slideIndex + 1 : 0);
-    //     }
-
-    // };
+ 
 
     const settings = {
         dots: true,
@@ -172,35 +165,7 @@ const Slider = () => {
         prevArrow: <PrevArrow />
       };
     return (
-//         <Container>
-//             <Arrow direction="left" onClick={()=> handleClick("left")}>
-//              <ArrowLeftOutlined/>
-//             </Arrow>
-//             <Wrapper slideIndex={slideIndex}>
-//             {silderImages.map((item) =>(
 
-//                 <Slide key={item.id}>
-                
-//                 <ImgContainer>
-//                 <Image src={item.src} alt={item.title} />
-//                 </ImgContainer>
-//                 <InfoContainer>
-//                     <Title>{item.title}</Title>
-//                     <Desc>{item.desc}</Desc>
-//                     <Button>{item.button}</Button>
-//                 </InfoContainer>
-
-// </Slide>
-
-//             ))}
-  
-//             </Wrapper>
-
-//             <Arrow direction="right" onClick={()=> handleClick("right")}>
-//              <ArrowRightOutlined/>
-//             </Arrow>
-
-//         </Container>
             <HeroSlider {...settings}>
           
                 {silderImages.map((item) =>(

@@ -11,6 +11,8 @@ import {useLocation} from "react-router-dom"
 import {publicReq} from '../axiosRequest'
 import {useDispatch} from 'react-redux'
 import {addProduct} from '../Redux/CartReducer'
+
+
 const Container=styled.div`
     
     background-color : #F1E4D3;;

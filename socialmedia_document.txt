@@ -1,0 +1,38 @@
+
+Social Media Features
+navbar
+-[
+	Icons 
+
+	- Chat - Inbox , communities
+	- Notifications - All , Unread
+	- Menu - 1. Social - Events , Friends, Groups , News Feed , Favourites , Most Recent , Pages
+	 	2. Entertainment 
+	 	3. Shopping
+	 	4. Personal
+		5. Professional
+	 	6. Community Resources
+	 	7. More / others
+	- profile - Settings , Help & Support , Display & Accessibility, Give Feedback , Log Out
+	- main logo
+	- Search
+	- Home , marketPlace , Watch , Groups
+
+]
+
+Leftbar [
+
+- Profile icon
+- [
+- features discussion
+
+]
+- Your Shortcuts[ discussion ]
+- Others [ discussion ]
+
+]
+
+RightBar[
+
+
+]

@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import {mobile} from "../Responsive";
 import {useState} from 'react'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import { login } from "../Redux/apiCalls";
+// import { Link } from "react-router-dom"
 const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -10,7 +11,7 @@ const Container = styled.div`
       rgba(255, 255, 255, 0.4),
       rgba(255, 255, 255, 0)
     ),
-    url("https://images.unsplash.com/photo-1554047310-ab6170fc7b10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTJ8fGpld2Vscnl8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60")
+    url("https://i.pinimg.com/564x/66/c3/ad/66c3ad47bddfba5d54027a949bdcd411.jpg")
       center;
   background-size: cover;
   display: flex;
@@ -72,16 +73,25 @@ const Link = styled.a`
   color:#792823;
 `;
 
+const Error = styled.span`
+  color: red;
+`;
+
 const  Login = () => {
 
-  const [username , setUsername] = useState('');
+  const [email , setEmail] = useState('');
   const [password , setPassword] = useState('');
+  // const [credentials , setCredentials] = useState({});
   const dispatch = useDispatch()
+
+  const { isFetching, error } = useSelector((state) => state.user);
   const LoginHandler = (event) => {
 
     event.preventDefault()
 
-    login(dispatch , {username , password})
+   
+
+    login(dispatch , {email , password})
   }
 
   return (
@@ -89,9 +99,10 @@ const  Login = () => {
       <Wrapper>
         <Title>SIGN IN</Title>
         <Form>
-          <Input type="email" placeholder="email" onChange = { (e) => setUsername(e.target.value)} />
-          <Input type="password" placeholder="password" onChange = { (e) => setPassword(e.target.value)} />
-          <Button onClick={LoginHandler}>LOGIN</Button>
+          <Input type="email" placeholder="email" onChange = { (e) => setEmail(e.target.value)} required />
+          <Input type="password" placeholder="password" onChange = { (e) => setPassword(e.target.value)} required />
+          <Button onClick={LoginHandler} disabled={isFetching}>LOGIN</Button>
+          {error && <Error>Something went wrong...</Error>}
           <Link>FORGET PASSWORD?</Link>
           <Link to="/register">CREATE A NEW ACCOUNT</Link>
         </Form>

@@ -1,18 +1,17 @@
 require("dotenv").config();  
-
 import express from "express";
-
 import cors from "cors";
-
 import helmet from "helmet"
-
 import DBconnection from './database/connection'
-
 import Auth from './API/Auth'
 import User from './API/user'
 import Product from './API/products'
 import Cart from './API/Cart'
 import Orders from './API/Orders'
+
+// const express = require('express');
+
+
 const app = express();
 
 app.use(express.json());  
@@ -30,7 +29,7 @@ app.get("/" , (req,res) => {
     return res.json("Welcome to House of Arka")
 })
 
-app.listen( 4000 , ()=>{
+app.listen( 4001 , ()=>{
 
     console.log("server is up & running");
 

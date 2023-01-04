@@ -37,9 +37,9 @@ Router.post("/login" ,async(req,res) =>{
 
     try{
 
-        await ValidateLogin(req.body.credentials)
+        await ValidateLogin(req.body)
         
-       const user =  await UserModel.findByEmailAndPassword(req.body.credentials);
+       const user =  await UserModel.findByEmailAndPassword(req.body);
 
        const token = user.generatejwttoken();
 

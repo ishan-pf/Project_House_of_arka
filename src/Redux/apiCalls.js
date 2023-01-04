@@ -1,12 +1,12 @@
 import  {onLogin , LoginSuccess, LoginError} from "./UserReducer"
-import {publicReq} from '../axiosRequest'
+import {UserReq} from '../axiosRequest'
 
 export const login = async(dispatch,user ) =>{
 
     dispatch(onLogin());
 
     try{
-        const res = await publicReq.post("auth/login",user);
+        const res = await UserReq.post("auth/login",user);
 
         dispatch( LoginSuccess(res.data))
     }
